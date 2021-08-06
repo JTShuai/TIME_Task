@@ -84,7 +84,6 @@ class TaskOne:
 
 
 
-
 if __name__ == "__main__":
     print("Launching")
 
@@ -96,3 +95,4 @@ if __name__ == "__main__":
     scrapy.exportScrapyResult("task_one.csv")
 
     print("finish")
+
