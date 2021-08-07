@@ -20,15 +20,18 @@ class ProgramDetailData:
     def __init__(self):
         self.description = None
         self.scope_list = None
+        self.program_url = None
 
 
 class TaskTwo:
     """
     Task 2: extract program details based on program url of the saved .csv file
     """
+    output_path = "./output"
 
     def __init__(self, file_name):
         self.file_name = file_name
+        self.program_df = None
 
     def readFile(self):
         """
@@ -36,7 +39,8 @@ class TaskTwo:
 
         :return: --  Dataframe
         """
-        return pd.read_csv(self.file_name)
+        self.program_df = pd.read_csv(self.file_name)
+        return self.program_df
 
     def getProgramUrlList(self, program_df=None):
         """
@@ -64,6 +68,7 @@ class TaskTwo:
         :return: program_details  --  List
         """
         program_details = ProgramDetailData()
+        program_details.program_url = program_url
 
         program_response = requests.get(program_url)
         program_soup = BeautifulSoup(program_response.text, 'html.parser')
