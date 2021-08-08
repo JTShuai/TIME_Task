@@ -93,7 +93,7 @@ class TaskThree(TaskTwo):
         :return: program_url_df  --  DataFrame
         """
 
-        all_program_obj_list = task_three.extractProgramDetail(True)
+        all_program_obj_list = self.extractProgramDetail(True)
 
         min_bounty_list = []
         max_bounty_list = []

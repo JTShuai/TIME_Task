@@ -34,6 +34,15 @@ class TaskFour:
         return df_bounty
 
     def plotHistogram(self, df_bounty= None, isSave = False):
+        """
+        plot the histogram based on the processed data
+
+        :param df_bounty: processed bounty data
+        :type df_bounty: DataFrame
+
+        :param isSave: determine if the figure be saved in folder
+        :type isSave: Boolean
+        """
         if df_bounty is None:
             df_bounty = self.processBountyData()
 
@@ -51,5 +60,6 @@ if __name__ == '__main__':
 
     task_four = TaskFour(file)
     task_four.plotHistogram(isSave=True)
-
     plt.show()
+    # processed_df = task_four.processBountyData()
+    # processed_df.to_csv('./output/test.csv')
