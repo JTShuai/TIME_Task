@@ -10,6 +10,7 @@ from step_2 import TaskTwo, ProgramDetailData
 import re
 import os
 
+
 class TaskThree(TaskTwo):
 
     def __init__(self, file_name):
@@ -121,10 +122,6 @@ class TaskThree(TaskTwo):
 
         program_url_df = self.getProgramBountyDataFrame()
         program_url_df.to_csv(os.path.join(self.output_path, file_name))
-
-
-
-
 
 
 if __name__ == "__main__":
